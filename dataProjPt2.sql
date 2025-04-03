@@ -1,5 +1,5 @@
 
---created a databse called 'TechnologyCompany', no other adjustments should be required
+--created a database called 'TechnologyCompany', no other adjustments should be required
 --for code to work correctly
 
 --this specific file only relates to DB creation; filtering/selects should be done
