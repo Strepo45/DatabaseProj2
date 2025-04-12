@@ -1,5 +1,5 @@
 
---created a database called 'TechnologyCompany', no other adjustments should be required
+--created a databse called 'TechnologyCompany', no other adjustments should be required
 --for code to work correctly
 
 --this specific file only relates to DB creation; filtering/selects should be done
@@ -14,6 +14,16 @@ CREATE TABLE offering
 
 );
 
+INSERT INTO offering VALUES
+	(1, 'Desktop'),
+	(2, 'Laptop'),
+	(3, 'Phone'),
+	(4, 'Screen replacement'),
+	(5, 'Desktop upgrade'),
+	(6, 'Windows activation')
+
+
+
 CREATE TABLE customer
 (
 
@@ -26,6 +36,12 @@ CREATE TABLE customer
 
 );
 
+INSERT INTO customer VALUES
+	(1, 'John Doe', '01/01/2000', 25, '1234 House Street', 'johndoe@outlook.com'),
+	(2, 'Jane Doe', '02/02/2002', 23, '0101 Place Drive', 'janedoe@gmail.com'),
+	(3, 'Mark Grayson', '04/09/2005', 20, '8723 Burger Lane', 'invincible@gmail.com'),
+	(4, 'Bruce Wayne', '10/31/1970', 54, '3008 Batman Place', 'brucewayne@gotham.net')
+
 CREATE TABLE techServices
 (
 	service_id int PRIMARY KEY,
@@ -34,6 +50,11 @@ CREATE TABLE techServices
 	offer_id int FOREIGN KEY REFERENCES offering(offer_id)
 
 );
+
+INSERT INTO techServices VALUES
+	(1, 'Mobile Services', 'Any phone screen', 4),
+	(2, 'Desktop Services', 'Upgradable system', 5),
+	(3, 'Desktop Services', 'Actively working system', 6)
 
 CREATE TABLE techProduct
 (
@@ -45,6 +66,11 @@ CREATE TABLE techProduct
 
 );
 
+INSERT INTO techProduct VALUES
+	(1, 'Desktop', 500.00, '09/05/2023', 1),
+	(2, 'Laptop', 250.00, '06/10/2023', 2),
+	(3, 'Phone', 125.00, '12/15/2024', 3)
+
 
 CREATE TABLE maintenance
 (
@@ -52,6 +78,11 @@ CREATE TABLE maintenance
 	hourly_rate float,
 	service_id int FOREIGN KEY REFERENCES techServices(service_id)
 );
+
+INSERT INTO maintenance VALUES
+	(1, 10.00, 1),
+	(2, 25.00, 2),
+	(3, 20.00, 3)
 
 CREATE TABLE repair
 (
@@ -62,6 +93,10 @@ CREATE TABLE repair
 
 );
 
+INSERT INTO repair VALUES
+	(1, 10.00, 1, 1),
+	(2, 25.00, 2, 2),
+	(3, 25.00, 3, 3)
 
 
 CREATE TABLE purchase
@@ -74,6 +109,12 @@ CREATE TABLE purchase
 
 );
 
+INSERT INTO purchase VALUES
+	(1, 1, 1, '03/03/2024', 'John Doe'),
+	(2, 2, 1, '05/11/2024', 'Jane Doe'),
+	(3, 3, 3, '01/23/2025', 'Mark Grayson'),
+	(4, 4, 6, '03/03/2034', 'Bruce Wayne')
+
 
 
 CREATE TABLE phone
@@ -84,6 +125,14 @@ CREATE TABLE phone
 	phone_type varchar(255)
 
 );
+
+INSERT INTO phone VALUES
+	(1, 1, '4043031984', 'Apple'),
+	(2, 2, '6707231234', 'Android'),
+	(3, 3, '1012023003', 'Android'),
+	(4, 4, '1234567890', 'Apple'),
+	(5, 5, '4707009821', 'Android'),
+	(6, 6, '3033232323', 'Apple')
 
 CREATE TABLE bill
 (
@@ -96,3 +145,8 @@ CREATE TABLE bill
 
 );
 
+INSERT INTO bill VALUES
+	(1, 1, 1, '05/02/2024', '06/02/2024', 10.00)
+	(2, 2, 2, '09/21/2023', '10/21/2023' ,25.00)
+	(3, 3, 3, '11/01/2024', '12/04/2024', 50.00)
+	
