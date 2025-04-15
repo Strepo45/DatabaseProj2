@@ -1,4 +1,5 @@
 
+
 --created a databse called 'TechnologyCompany', no other adjustments should be required
 --for code to work correctly
 
@@ -146,7 +147,25 @@ CREATE TABLE bill
 );
 
 INSERT INTO bill VALUES
-	(1, 1, 1, '05/02/2024', '06/02/2024', 10.00)
-	(2, 2, 2, '09/21/2023', '10/21/2023' ,25.00)
+	(1, 1, 1, '05/02/2024', '06/02/2024', 10.00),
+	(2, 2, 2, '09/21/2023', '10/21/2023' ,25.00),
 	(3, 3, 3, '11/01/2024', '12/04/2024', 50.00)
 	
+
+Q1. Customer information and their purchases
+SELECT
+	c.*,
+	p.*
+FROM
+	customer c
+JOIN
+	purchase p ON c.customer_id = p.customer_id
+
+Q2. List of products under $500
+SELECT
+	techProduct.product_name,
+	techProduct.standard_price
+FROM
+	techProduct
+WHERE
+	standard_price < 500
