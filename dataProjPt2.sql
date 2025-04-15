@@ -131,9 +131,7 @@ INSERT INTO phone VALUES
 	(1, 1, '4043031984', 'Apple'),
 	(2, 2, '6707231234', 'Android'),
 	(3, 3, '1012023003', 'Android'),
-	(4, 4, '1234567890', 'Apple'),
-	(5, 5, '4707009821', 'Android'),
-	(6, 6, '3033232323', 'Apple')
+	(4, 4, '1234567890', 'Apple');
 
 CREATE TABLE bill
 (
