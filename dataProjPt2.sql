@@ -169,3 +169,34 @@ FROM
 	techProduct
 WHERE
 	standard_price < 500
+
+--Q5. What is the most expensive service and the name of the customer who received that service?
+SELECT TOP 1
+    o.offering_desc,
+    c.customer_name,
+    b.amount_due	
+FROM bill b
+JOIN customer c
+    ON b.customer_id = c.customer_id
+JOIN techServices ts
+    ON b.service_id = ts.service_id
+JOIN offering o
+    ON ts.offer_id = o.offer_id
+ORDER BY b.amount_due DESC;
+
+--Q6. What is the oldest service and service information?
+SELECT TOP 1
+    b.bill_id,
+    c.customer_name,
+    b.date_of_service,
+    ts.unit_responsible,
+    ts.service_conditions,
+    o.offering_desc
+FROM bill b
+JOIN customer c
+    ON b.customer_id = c.customer_id
+JOIN techServices ts
+    ON b.service_id = ts.service_id
+JOIN offering o
+    ON ts.offer_id = o.offer_id
+ORDER BY b.date_of_service ASC;
