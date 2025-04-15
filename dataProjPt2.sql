@@ -174,7 +174,7 @@ SELECT
 	tp.product_name
 FROM 
 	offering o
-JOIN 
+LEFT JOIN 
 	techProduct tp ON o.offer_id = tp.offer_id;
 
 --Q4. List of customers and the number of services they received
