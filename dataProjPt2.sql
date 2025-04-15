@@ -169,6 +169,26 @@ FROM
 	techProduct
 WHERE
 	standard_price < 500
+	
+--Q3. List of offerings and products 
+SELECT 
+	o.offering_desc,
+	tp.product_id
+FROM 
+	offering o
+JOIN 
+	techProduct tp ON o.offer_id = tp.offer_id;
+
+--Q4. List of customers and the number of services they received
+Select 
+	c.customer_name,
+	SUM(1) AS services_count
+FROM
+	customer c
+JOIN
+	bill b ON c.customer_id = b.customer_id
+GROUP BY 
+	c.customer_name;
 
 --Q5. What is the most expensive service and the name of the customer who received that service?
 SELECT TOP 1
