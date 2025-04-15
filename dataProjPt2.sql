@@ -173,7 +173,7 @@ WHERE
 --Q3. List of offerings and products 
 SELECT 
 	o.offering_desc,
-	tp.product_id
+	tp.product_name
 FROM 
 	offering o
 JOIN 
